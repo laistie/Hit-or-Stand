@@ -1,30 +1,21 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Image } from 'react-native';
+import { useFonts } from 'expo-font';
+
+import styles from '../assets/styles/MainStyle'
+
+const backgroundImage = require('../assets/background-image.jpg');
 
 function HomeScreen() {
-    return (
-      <View style={styles.homeContainer}>
-        <Text style={styles.homeHeader}> Hit or Stand? </Text>
-        <Text style={styles.homeH2}> Hitar 21 nunca foi tão fácil </Text>
-      </View>
-    );
-  }
-
-const styles = StyleSheet.create({
-    homeContainer: {
-        flex: 1, 
-        justifyContent: 'center', 
-        alignItems: 'center',
-        backgroundColor: '#036016'
-    },
-    homeHeader: {
-        fontSize: 48,
-        color: '#F5F5F5',
-        textTransform: 'uppercase'
-    },
-    homeH2: {
-        fontSize: 24,
-        color: '#F5F5F5',
-    }
-})
+  const [fontsLoaded] = useFonts({
+    Bungee: require('../assets/fonts/Bungee-Regular.ttf')
+  });
+  return (
+    <View style={styles.container}>
+      <Image source={backgroundImage} style={styles.image}/>
+      <Text style={{fontFamily: 'Bungee', color: '#F5F5F5', fontSize: 48}}> Hit or Stand? </Text>
+      <Text style={{fontFamily: 'Bungee', color: '#F5F5F5', fontSize: 24}}> Hitar 21 nunca foi tão fácil </Text>
+    </View>
+  );
+}
 
 export default HomeScreen

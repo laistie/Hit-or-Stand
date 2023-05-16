@@ -1,6 +1,5 @@
 import { StyleSheet, Image, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
 
 import HomeScreen from './Home';
 import RulesScreen from './Rules';
@@ -56,7 +55,7 @@ const Tabs = () => {
                             tintColor: focused ? '#BF0603' : '#0A0908'
                         }}
                     />
-                    <Text style={{color: focused ?  '#BF0603' : '#0A0908', fontSize: 12}}> INÍCIO </Text>
+                    <Text style={{color: focused ?  '#BF0603' : '#0A0908', fontSize: 12}}> REGRAS </Text>
                 </View>
             ),
             }}/>
