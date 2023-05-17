@@ -17,18 +17,22 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     defaultTxt: {
-        fontFamily: 'Bungee', 
+        fontWeight: 'bold',
         color: '#F5F5F5',
     },
     defaultBTxt: {
-        fontFamily: 'Bungee', 
+        fontWeight: 'bold',
         color: '#0A0908',
     },
     defaultRTxt: {
+        fontWeight: 'bold',
+        color: '#F10804',
+    },
+    themedTxt: {
         fontFamily: 'Bungee', 
-        color: '#BF0603',
     },
     h1Txt: {
+        fontFamily: 'Bungee', 
         fontSize: 36,
         marginLeft: '0.5em',
         marginRight: '0.25em',
@@ -40,16 +44,28 @@ const styles = StyleSheet.create({
     },
     pTxt: { 
         fontSize: 20,
-        margin: '0.5em',
+        marginTop: '1.5em',
+        marginLeft: '1.5em',
+        marginRight: '1.5em',
+        textAlign: 'justify',
     },
     spanTxt: {
-        fontSize: 18,
+        fontSize: 20,
         marginLeft: '1.5em',
     },
     shadowTxt: {
         textShadowColor: 'rgba(0, 0, 0, 0.75)',
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 10
+    },
+    touchable: {
+        marginTop: '1.5em',
+        backgroundColor: '#036016',
+        width: '50%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: '0.5em',
+        borderRadius: 5,
     }
 })
 
