@@ -34,37 +34,44 @@ const styles = StyleSheet.create({
     h1Txt: {
         fontFamily: 'Bungee', 
         fontSize: 36,
-        marginLeft: '0.5em',
-        marginRight: '0.25em',
+        marginLeft: 15,
+        marginRight: 5,
     },
     h2Txt: {
         fontSize: 20,
-        marginLeft: '0.5em',
-        marginRight: '0.25em',
+        marginLeft: 15,
+        marginRight: 5,
     },
     pTxt: { 
         fontSize: 20,
-        marginTop: '1.5em',
-        marginLeft: '1.5em',
-        marginRight: '1.5em',
+        marginTop: 20,
+        marginLeft: 20,
+        marginRight: 20,
         textAlign: 'justify',
     },
     spanTxt: {
         fontSize: 20,
-        marginLeft: '1.5em',
+        marginLeft: 20,
     },
     shadowTxt: {
         textShadowColor: 'rgba(0, 0, 0, 0.75)',
         textShadowOffset: {width: -1, height: 1},
         textShadowRadius: 10
     },
+    shadow: {
+        shadowColor: 'rgba(0, 0, 0, 0.75)',
+        shadowOffset: {width: -1, height: 5},
+        shadowOpacity: 0.25,
+        shadowRadius: 10,
+        elevation: 5,
+    },
     touchable: {
-        marginTop: '1.5em',
+        marginTop: 20,
         backgroundColor: '#036016',
         width: '50%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: '0.5em',
+        padding: 15,
         borderRadius: 5,
     }
 })
