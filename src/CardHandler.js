@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { View, TouchableHighlight } from 'react-native';
+import { Text, View, TouchableHighlight, Alert } from 'react-native';
 
 import styles from '../assets/styles/MainStyle'
 
@@ -14,6 +14,7 @@ export default class CardHandler extends Component {
         this.state = {
           cards: [],
           drawnCards: [],
+          counting: 0,
         };
     }
     async componentDidMount() {
@@ -25,11 +26,27 @@ export default class CardHandler extends Component {
     }
 
     drawCard(card) {
+        if(card.value == '7' || card.value == '8' || card.value == '9'){
+            //
+        }else if(card.value == '10' || card.value == 'JACK' || card.value == 'QUEEN' || card.value == 'KING'){
+            this.state.counting = parseInt(this.state.counting) - 1;
+        }else{
+            this.state.counting = parseInt(this.state.counting + 1)
+        }
         const index = this.state.cards.indexOf(card)
-        const drawnCard = this.state.cards[index]
         return this.setState(prevState => ({
             drawnCards: [...prevState.drawnCards, ...prevState.cards.splice(index, 1)],
         }));
+    }
+
+    showCount(){
+        const number = this.state.counting.toString()
+        Alert.alert('Contagem', number, [
+        {
+            text: 'OK',
+            onPress: () => console.log('Alert dismissed'),
+        },  
+        ])
     }
 
     render() {
@@ -38,9 +55,20 @@ export default class CardHandler extends Component {
                 <Card value={cardDetails.value} suit={cardDetails.suit} />
             </TouchableHighlight>
         ));
+        const drawnCards = this.state.drawnCards.map((cardDetails, cardId) => (
+            <TouchableHighlight key={cardId} style={[ styles.card, styles.drawnCard ]}>
+                <Card value={cardDetails.value} suit={cardDetails.suit} />
+            </TouchableHighlight>
+        ));
         return (
-            <View style={[ styles.cardContainer ]}>
+            <View style={styles.cardContainer}>
+                <View>
+                    <TouchableHighlight style={[ styles.touchableHighlight ]} onPress={() => this.showCount()}>
+                        <Text style={styles.bigTxt}> Mostrar contagem </Text>
+                    </TouchableHighlight>
+                </View>
                 {cards}
+                {drawnCards}
             </View>
         );
     }

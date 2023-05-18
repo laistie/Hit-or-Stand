@@ -8,7 +8,7 @@ const backgroundImage = require('../assets/background-image.jpg');
 
 function MainScreen({ navigation }) {
     return (
-        <SafeAreaView style={ styles.container }>
+        <SafeAreaView>
             <ScrollView>
                 <ImageBackground source={backgroundImage} resizeMode='cover' style={[ styles.image, styles.container ]}>
                     <CardHandler />

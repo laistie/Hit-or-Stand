@@ -20,6 +20,11 @@ const styles = StyleSheet.create({
         fontSize: 12,
         fontWeight: 'bold',
     },
+    bigTxt: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#F5F5F5',
+    },
     defaultTxt: {
         fontWeight: 'bold',
         color: '#F5F5F5',
@@ -78,6 +83,21 @@ const styles = StyleSheet.create({
         padding: 15,
         borderRadius: 5,
     },
+    touchableHighlight: {
+        marginTop: 20,
+        backgroundColor: '#036016',
+        width: '100%',
+        padding: 75,
+        borderRadius: 5,
+        border: 'thick solid #F5F5F5'
+    },
+    mainContainer:{
+        flex: 1,
+        justifyContent: 'center',
+        alignContent: 'center',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+    },
     cardContainer: {
         flex: 1,
         justifyContent: 'center',
@@ -90,8 +110,8 @@ const styles = StyleSheet.create({
         width: 75,
         textAlign:'center',
         justifyContent: 'center',
-        alignContent: 'center',
-        marginLeft: 10,
+        marginLeft: 15,
+        marginRight: 10,
         marginTop: 10,
         marginBottom: 10,
         borderRadius: 5,
