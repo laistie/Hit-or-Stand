@@ -1,19 +1,14 @@
 import React from 'react';
 import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
-import { useFonts } from 'expo-font';
 import { AntDesign } from '@expo/vector-icons'; 
 
-import styles from '../assets/styles/MainStyle'
+import styles from '../assets/styles/MainStyle';
 
-import Header from './Header'
-import Tabs from './TabNav'
+import Header from './Header';
 
 const backgroundImage = require('../assets/background-image.jpg');
 
 function HomeScreen({ navigation }) {
-  const [fontsLoaded] = useFonts({
-    Bungee: require('../assets/fonts/Bungee-Regular.ttf')
-  });
   return (
     <View style={ styles.container }>
       <ImageBackground source={backgroundImage} resizeMode='cover' style={[ styles.image, styles.container ]}>

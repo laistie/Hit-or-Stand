@@ -16,6 +16,11 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
     },
+    smallTxt: {
+        fontSize: 12,
+        fontWeight: 'bold',
+        color: '#F5F5F5',
+    },
     defaultTxt: {
         fontWeight: 'bold',
         color: '#F5F5F5',
@@ -73,7 +78,20 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         padding: 15,
         borderRadius: 5,
-    }
+    },
+    cardContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+    },
+    card: {
+        textAlign:'center',
+        justifyContent: 'center',
+        height: 100,
+        marginLeft: 20,
+        backgroundColor: '#036016',
+        borderRadius: 5,
+    },
 })
 
 export default styles
