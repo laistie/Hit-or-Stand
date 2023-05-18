@@ -19,6 +19,8 @@ const styles = StyleSheet.create({
     smallTxt: {
         fontSize: 12,
         fontWeight: 'bold',
+        color: '#F10804',
+        marginTop: 10,
     },
     bigTxt: {
         fontSize: 18,
@@ -90,6 +92,13 @@ const styles = StyleSheet.create({
         padding: 75,
         borderRadius: 5,
         border: 'thick solid #F5F5F5'
+    },
+    input: {
+        height: 40,
+        marginTop: 20,
+        borderRadius: 5,
+        border: 'thick solid #F5F5F5',
+        padding: 10,
     },
     mainContainer:{
         flex: 1,
