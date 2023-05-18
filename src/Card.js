@@ -1,15 +1,27 @@
 import React, { Component } from "react";
-import { View, Image } from 'react-native';
+import { Text } from 'react-native';
 
 import styles from '../assets/styles/MainStyle'
 
 class Card extends Component {
     constructor(props) {
-        super(props);
+      super(props);
+      this.state = {
+        inGame: true,
+        color: '#F5F5F5',
+      }
     };
+
+    setNotInGame() {
+      this.state.inGame = false;
+    }
+
     render() {
+      if( this.state.inGame == false ) {
+        this.state.color = '#0A0908'
+      }
       return (
-        <Image src={this.props.src} alt={this.props.alt} style={ styles.card } />
+        <Text style={{fontSize: 12, fontWeight: 'bold', color: this.state.color}}> {this.props.value} of {this.props.suit} </Text>
       )
     }
 }    

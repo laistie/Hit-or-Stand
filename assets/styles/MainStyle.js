@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
     smallTxt: {
         fontSize: 12,
         fontWeight: 'bold',
-        color: '#F5F5F5',
     },
     defaultTxt: {
         fontWeight: 'bold',
@@ -82,15 +81,26 @@ const styles = StyleSheet.create({
     cardContainer: {
         flex: 1,
         justifyContent: 'center',
+        alignContent: 'center',
+        flexDirection: 'row',
         flexWrap: 'wrap',
     },
     card: {
+        height: 50,
+        width: 75,
         textAlign:'center',
         justifyContent: 'center',
-        height: 100,
-        marginLeft: 20,
-        backgroundColor: '#036016',
+        alignContent: 'center',
+        marginLeft: 10,
+        marginTop: 10,
+        marginBottom: 10,
         borderRadius: 5,
+    },
+    deckCard: {
+        backgroundColor: '#036016',
+    },
+    drawnCard: {
+        backgroundColor: '#F10804',
     },
 })
 

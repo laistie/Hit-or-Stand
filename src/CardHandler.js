@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Card from './Card';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { View, TouchableHighlight } from 'react-native';
 
 import styles from '../assets/styles/MainStyle'
+
+import Card from './Card';
 
 const API_URL = "https://deckofcardsapi.com/api/deck/new/";
 
@@ -20,24 +21,21 @@ export default class CardHandler extends Component {
         const cards = await axios
           .get(`https://deckofcardsapi.com/api/deck/${data.deck_id}/draw/?count=52`)
           .then(e => e.data.cards);
-    
         this.setState({ cards });
     }
 
-    drawCard() {
-        return this.setState(prevState => ({ 
-            drawnCards: [
-                ...prevState.drawnCards,
-                prevState.cards[prevState.cards.length - 1]
-            ],
-            cards: [...prevState.cards.slice(0, -1)]
-        }))
+    drawCard(card) {
+        const index = this.state.cards.indexOf(card)
+        const drawnCard = this.state.cards[index]
+        return this.setState(prevState => ({
+            drawnCards: [...prevState.drawnCards, ...prevState.cards.splice(index, 1)],
+        }));
     }
 
     render() {
         const cards = this.state.cards.map((cardDetails, cardId) => (
-            <TouchableHighlight key={cardId} style={[ styles.card ]}>
-                <Text style={[ styles.smallTxt ]}> {cardDetails.value} of {cardDetails.suit} </Text>
+            <TouchableHighlight key={cardId} style={[ styles.card, styles.deckCard ]} onPress={() => this.drawCard(cardDetails)}>
+                <Card value={cardDetails.value} suit={cardDetails.suit} />
             </TouchableHighlight>
         ));
         return (
