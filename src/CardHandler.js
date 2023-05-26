@@ -28,7 +28,7 @@ export default class CardHandler extends Component {
     drawCard(card) {
         if(card.value == '7' || card.value == '8' || card.value == '9'){
             //
-        }else if(card.value == '10' || card.value == 'JACK' || card.value == 'QUEEN' || card.value == 'KING'){
+        }else if(card.value == '10' || card.value == 'JACK' || card.value == 'QUEEN' || card.value == 'KING' || card.value == 'ACE'){
             this.state.counting = parseInt(this.state.counting) - 1;
         }else{
             this.state.counting = parseInt(this.state.counting + 1)
